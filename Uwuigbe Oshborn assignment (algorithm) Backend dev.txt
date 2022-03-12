@@ -1,0 +1,130 @@
+					QUESTION 1
+Write an algorithm to add two integer numbers
+
+					  ANSWER
+Step 1: Start
+Step 2: Input an integer number 'A'
+Step 3: If non-integer number is entered by user as 'A', ask to repeat input
+Step 4: Input an integer number 'B'
+Step 5: If non-integer number is entered by user as 'B', ask to repeat input
+Step 6: Define an output integer 'Sum' to take the sum of the two numbers 'A' and 'B' 
+Step 7: Sum = A + B
+Step 8: Print Sum
+Step 9: Stop
+
+
+					QUESTION 2
+Write an algorithm to find the factorial of a positive integer number
+
+					  ANSWER
+Step 1: Start
+Step 2: Enter a positive integer number 'Num'
+Step 3: Check if 'Num' is equal to 0 or 1, if so goto step 4, otherwise goto step 5
+Step 4: Print 1, goto Step 9
+Step 5: Check if the user entered a positive integer number as 'Num', and prompt them to try again if not so
+Step 6: Declare an integer variable 'Factorial' and give it an intial value of 1
+Step 7: Initiate a loop
+		While 'Num' is greater than zero
+			Multiply 'Factorial' by 'Num' and store result in 'Factorial'
+			Substract 1 from 'Num'
+		End while loop
+Step 8: Print 'Factorial', goto Step 9
+Step 9: Stop
+
+
+					QUESTION 3
+Write an algorithm to find the fibonacci sequence
+
+					  ANSWER
+Step 1: Start
+Step 2: Enter a positive integer number 'Num', which is the extent of nth term the sequence should print or get to
+Step 3: Check if the user entered a positive integer number, and prompt them to try again if not so
+Step 4: Declare an integer variable 'A' (first term) and 'B' (second term) and give them an intial value of 0 & 1 respectively
+Step 5: Declare an integer variable 'counter' and give it an intial value of 0
+Step 6: Initiate a loop
+		While 'counter' is lesser than 'Num'
+			Print 'A'
+			let 'A' equal 'B'
+			let 'B' equals the sum of 'A' and 'B'
+			let 'counter' equals the sum of 'counter' and 1
+		End while loop
+Step 7: Stop
+
+
+					QUESTION 4
+Write an algorithm to sort a given set of numbers. (Bubble sort)
+
+					  ANSWER
+Step 1: Start
+Step 2: Enter an array of negative/positive integer number 'Arr', which is supposed to be sorted in ascending order
+Step 3: Check if each items entered by the user in the 'Arr' is a negative/positive integer number, and prompt them to try again if not so
+Step 4: Declare an integer variable 'i' (which represents the index of an item in the 'Arr') and give it an intial value of 0
+Step 5: Get the number of items in 'Arr' and store it as 'Length'
+Step 6: We start by comparing the first item in array with an index of 0 (i.e 'i')
+	and the next adjacent item with an index of 1 (i.e 'i'+1), if the item 
+	present at 'i'+1 is less than that in 'i', we swap the items at 'i'+1 & 'i'
+Step 7: If Step 6 is not the case, then no swapping will take place
+Step 8: Now 'i' gets incremented by 1 (i.e 'i'='i'+1), and Step 6 to Step 7 is repeated again until the array is exhausted (i.e 'i'='Length'-1)
+Step 9: We will ignore the last index as it is already sorted and now the largest item will be at the last index of 'Arr'
+Step 10: Next, we will again set 'i'=0 and continue with the same steps 6 to 8 until the items in the array are all sorted. This usually involves a nested loop
+Step 11: Stop
+
+
+					QUESTION 5
+Write an algorithm to convert a given number from one base to another.
+
+					  ANSWER
+Step 1: Start
+Step 2: Enter a string or character  variable 'S', which represents a number of a given base to be converted
+Step 3: Enter a positive integer number 'a', which represents the current base of 'S'
+Step 4: Enter a positive integer number 'b', which represents the new base to be converted to
+Step 5: Check if the user entered a positive integer number for 'a' and 'b', and prompt them to enter valid number if not so
+
+Step 6: Firstly, we convert 'S' of base 'a' to base 10 by;
+	Step 6a: Get the number of items in 'S' and store it as 'Length'
+	Step 6b: Declare an integer variable 'Power' and 'Result' and give them an intial value of 1 & 0 respectively
+	Step 6c: Declare an integer variable 'counter' and give it an intial value of 0
+	Step 6d: Initiate a loop
+			While 'counter' is lesser than 'Length'
+				Define a function called 'Validate', which checks each item in 'S' and returns its corresponding decimal value using a ASCII relationship (considering each 'counter' to be an index of 'S')
+					Check if the item in 'S' at a given index of 'counter' is between 0 & 9 inclusive
+						return (the ASCII value of that item and substract 48 from it), as 'returned_value'
+					
+					Declare an integer variable 'counter2' and give it an intial value of 0
+					Initiate a loop
+						for element in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+							Check if the item in 'S' at a given index of 'counter' is equal to any of the element 
+								return (the ASCII value of that item and substract 55 from it), as 'returned_value'
+							let 'counter2' equals the sum of 'counter2' and 1
+        						Check if counter2 is now equal to 26
+								if so, print 'Invalid number input for such base' and Stop the program
+		
+				Check if the 'returned_value' from the 'Validate' function is greater than or equal to base 'a'
+					if so, Print 'Invalid number input for such base' and Stop the program
+				let 'Result'  equal ('Result' + 'returned_value' times 'Power')
+				let 'Power' equals the product of 'Power' and base 'a'
+				let 'counter' equals the sum of 'counter' and 1
+			return 'Result'
+			End while loop
+	
+Step 7: Next, we convert the returned 'Result' from Step 6d which is in base 10 to a desired 'Ans' of base 'b' by;
+	Step 7a: Declare an empty string or character  variable 'Ans', which will represent a collection of numbers of base 'b' after conversion
+	Step 7b: Initiate a loop
+			While 'Result' is greater than 0
+				Declare an integer variable 'Rememder' which is equal to ((decimal from 'Result' divided by base 'b') times base 'b')
+				Define a function called 'Revalidate', which checks item in 'Rememder' and returns its corresponding decimal value using a ASCII relationship
+					Check if the item in 'Rememder' is between 0 & 9 inclusive
+						return (the ASCII value of the sum of 'Rememder' and 48), as 'returned_value2' 
+					Check if otherwise 
+						return (the ASCII value of the sum of 'Rememder' and 55), as 'returned_value2' 
+
+				Update 'Ans' by storing the 'returned_value2' at the last index of the string
+				Update 'Result' (i.e 'Result' = the whole number from 'Result' divided by base 'b')
+
+			Reverse the items in 'Ans' from right to left
+				
+			return 'Ans'
+			End while loop
+
+Step 8: Print 'Ans'
+Step 9: Stop
